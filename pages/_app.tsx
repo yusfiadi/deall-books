@@ -1,8 +1,20 @@
-import '../styles/globals.css'
-import type { AppProps } from 'next/app'
+import type { AppProps } from "next/app";
+import { ThemeProvider, CssBaseline } from "@mui/material";
+import Head from "next/head";
+import lightTheme from "../styles/theme/lightTheme";
+
+import "../styles/globals.css";
 
 function MyApp({ Component, pageProps }: AppProps) {
-  return <Component {...pageProps} />
+  return (
+    <ThemeProvider theme={lightTheme}>
+      <CssBaseline />
+      <Head>
+        <title>Deall-Books | By Yusfi Adilaksa</title>
+      </Head>
+      <Component {...pageProps} />
+    </ThemeProvider>
+  );
 }
 
-export default MyApp
+export default MyApp;
