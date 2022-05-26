@@ -8,6 +8,7 @@ import SearchIcon from "@mui/icons-material/Search";
 type Props = {
   keyword: string;
   handleChange: (event: any) => void;
+  isBookmarkPage?: boolean;
 };
 
 const SearchInput = (props: Props) => {
@@ -17,7 +18,9 @@ const SearchInput = (props: Props) => {
       <OutlinedInput
         id="search-keyword"
         type={"text"}
-        placeholder="Search this category"
+        placeholder={
+          props.isBookmarkPage ? "Search books" : "Search this category"
+        }
         value={props.keyword}
         size={"small"}
         onChange={props.handleChange}

@@ -1,12 +1,13 @@
 import React, { useState, useEffect, useRef } from "react";
 import type { NextPage } from "next";
+import { GetServerSideProps } from "next";
 import Container from "@mui/material/Container";
 import Typography from "@mui/material/Typography";
 
 import styles from "../styles/Home.module.css";
-import AppBar from "./components/AppBar/AppBar";
-import BookGrid from "./components/Book/BookGrid";
-import SearchInput from "./components/Input/SearchInput";
+import AppBar from "../components/AppBar/AppBar";
+import BookGrid from "../components/Book/BookGrid";
+import SearchInput from "../components/Input/SearchInput";
 
 const MyBooksPage: NextPage = () => {
   const [myBooks, setMyBooks] = useState<any>([]);
@@ -59,6 +60,7 @@ const MyBooksPage: NextPage = () => {
           <SearchInput
             keyword={keyword}
             handleChange={(event: any) => handleChange(event)}
+            isBookmarkPage={true}
           />
           {filterByKeyword().length > 0 ? (
             <BookGrid
@@ -79,6 +81,12 @@ const MyBooksPage: NextPage = () => {
       </Container>
     </>
   );
+};
+
+export const getServerSideProps: GetServerSideProps = async (context) => {
+  return {
+    props: {}, // will be passed to the page component as props
+  };
 };
 
 export default MyBooksPage;

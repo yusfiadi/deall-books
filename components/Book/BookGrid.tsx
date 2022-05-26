@@ -1,7 +1,7 @@
 import React from "react";
 import Grid from "@mui/material/Grid";
 
-import BookCard from "../Book/BookCard";
+import BookCard from "./BookCard";
 
 type Props = {
   books: {

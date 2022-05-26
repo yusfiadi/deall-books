@@ -16,6 +16,7 @@ const CategoryChip = (props: Props) => {
   const handleSelectCategory = (categoryId: number) => {
     router.push(categoryId === 1 ? `` : `?categoryId=${categoryId}`);
   };
+
   return (
     <Chip
       style={{ border: "1px solid rgba(0, 0, 0, 0.08)" }}

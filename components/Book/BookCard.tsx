@@ -57,7 +57,11 @@ const BookCard = (props: Props) => {
           height={600}
           image={props.book.cover_url}
           alt={props.book.title}
-          style={{ height: "100%", objectFit: "initial", borderRadius: "10px" }}
+          style={{
+            height: "100%",
+            objectFit: "initial",
+            borderRadius: "10px",
+          }}
         />
         <CardContent style={{ padding: "10px 0" }}>
           <BookTitleStyled variant="body1">{props.book.title}</BookTitleStyled>
