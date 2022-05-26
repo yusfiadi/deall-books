@@ -33,6 +33,39 @@ type Props = {
 };
 
 const Home: NextPage<Props> = ({ categories, books }) => {
+  const isInitialMount = useRef(true);
+  const [myBooks, setMyBooks] = useState<any>([]);
+  const [keyword, setKeyword] = useState("");
+  const handleChange = (event: any) => {
+    setKeyword(event.target.value);
+  };
+
+  useEffect(() => {
+    setMyBooks(JSON.parse(window.localStorage.getItem("my_books") ?? "[]"));
+  }, []);
+
+  useEffect(() => {
+    if (isInitialMount.current) {
+      isInitialMount.current = false;
+    } else {
+      window.localStorage.setItem("my_books", JSON.stringify(myBooks));
+    }
+  }, [myBooks]);
+
+  const handleBookmark = (book: any) => {
+    setMyBooks([...myBooks, { ...book }]);
+  };
+
+  const handleUnbookmark = (title: string) => {
+    setMyBooks(myBooks.filter((book: any) => book.title !== title));
+  };
+
+  const filterByKeyword = () => {
+    return books.filter((book: any) =>
+      book.title.toLowerCase().includes(keyword.toLowerCase())
+    );
+  };
+
   return (
     <Container maxWidth="sm">
       <main className={styles.main}>
