@@ -1,11 +1,16 @@
+import React, { useState, useEffect, useRef } from "react";
 import type { NextPage } from "next";
 import Container from "@mui/material/Container";
 import { GetServerSideProps } from "next";
 import axios from "axios";
+import Typography from "@mui/material/Typography";
 
 import styles from "../styles/Home.module.css";
+import AppBar from "./components/AppBar/AppBar";
+import SearchInput from "./components/Input/SearchInput";
 import CategoryStack from "./components/Category/CategoryStack";
 import BookGrid from "./components/Book/BookGrid";
+import PageButton from "./components/Button/PageButton";
 
 type Props = {
   categories: {
