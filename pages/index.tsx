@@ -67,12 +67,37 @@ const Home: NextPage<Props> = ({ categories, books }) => {
   };
 
   return (
-    <Container maxWidth="sm">
-      <main className={styles.main}>
-        <CategoryStack categories={categories} />
-        <BookGrid books={books} />
-      </main>
-    </Container>
+    <>
+      <AppBar />
+      <Container maxWidth="sm">
+        <main className={styles.main}>
+          <SearchInput
+            keyword={keyword}
+            handleChange={(event: any) => handleChange(event)}
+          />
+          <CategoryStack categories={categories} />
+          {filterByKeyword().length > 0 ? (
+            <>
+              <BookGrid
+                books={filterByKeyword()}
+                myBooks={myBooks}
+                handleBookmark={(book: any) => handleBookmark(book)}
+                handleUnbookmark={(title: string) => handleUnbookmark(title)}
+              />
+              {keyword.length === 0 && (
+                <PageButton disabledButton={filterByKeyword().length < 12} />
+              )}
+            </>
+          ) : (
+            <div>
+              <Typography textAlign={"center"} component={"p"} gutterBottom>
+                Your favorite book will be added every Monday. Stay tuned!
+              </Typography>
+            </div>
+          )}
+        </main>
+      </Container>
+    </>
   );
 };
 
