@@ -108,7 +108,7 @@ export const getServerSideProps: GetServerSideProps = async (context) => {
   let booksResponse = await axios.get(
     `https://asia-southeast2-sejutacita-app.cloudfunctions.net/fee-assessment-books?categoryId=${
       context.query.categoryId ?? "1"
-    }&page=0`
+    }&page=${context.query.page ?? "0"}&size=12`
   );
 
   return {
