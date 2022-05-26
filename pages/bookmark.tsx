@@ -71,7 +71,7 @@ const MyBooksPage: NextPage = () => {
           ) : (
             <div>
               <Typography textAlign={"center"} component={"p"} gutterBottom>
-                Let's bookmark some books!
+                Let&apos;s bookmark some books!
               </Typography>
             </div>
           )}

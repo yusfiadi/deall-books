@@ -232,7 +232,7 @@ const BookModal = (props: Props) => {
               {props.book.description && props.book.description.length > 0 && (
                 <SectionWrapper>
                   <Typography variant="h6" component={"h6"}>
-                    What's it about?
+                    What&apos;s it about?
                   </Typography>
                   <Typography component={"p"} gutterBottom>
                     {props.book.description}
@@ -242,7 +242,7 @@ const BookModal = (props: Props) => {
               {props.book.sections && props.book.sections.length > 0 && (
                 <SectionWrapper>
                   <Typography variant="h6" component={"h6"}>
-                    What's inside?
+                    What&apos;s inside?
                   </Typography>
                   <CustomList>
                     {props.book.sections.map(
