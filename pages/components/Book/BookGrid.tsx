@@ -1,6 +1,5 @@
 import React from "react";
 import Grid from "@mui/material/Grid";
-import styled from "@emotion/styled";
 
 import BookCard from "../Book/BookCard";
 
@@ -18,6 +17,10 @@ type Props = {
     }[];
     audio_length: number;
   }[];
+  myBooks?: any;
+  handleBookmark: (book: any) => void;
+  handleUnbookmark: (title: string) => void;
+  isBookmarkPage?: boolean;
 };
 
 const BookGrid = (props: Props) => {
@@ -28,7 +31,15 @@ const BookGrid = (props: Props) => {
         props.books.map((book: any, id: number) => {
           return (
             <Grid item xs={6} md={4} key={id}>
-              <BookCard book={book} />
+              <BookCard
+                book={book}
+                myBooks={props.myBooks}
+                handleBookmark={(book: any) => props.handleBookmark(book)}
+                handleUnbookmark={(title: string) =>
+                  props.handleUnbookmark(title)
+                }
+                isBookmarkPage={props.isBookmarkPage}
+              />
             </Grid>
           );
         })}
