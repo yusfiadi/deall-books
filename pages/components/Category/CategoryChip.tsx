@@ -18,6 +18,7 @@ const CategoryChip = (props: Props) => {
   };
   return (
     <Chip
+      style={{ border: "1px solid rgba(0, 0, 0, 0.08)" }}
       label={props.category.name}
       variant={props.selected ? "filled" : "outlined"}
       onClick={() => handleSelectCategory(props.category.id)}
