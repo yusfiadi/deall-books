@@ -12,7 +12,7 @@ type Props = {
 };
 
 const SearchInput = (props: Props) => {
-  console.log(props.keyword);
+
   return (
     <FormControl sx={{ width: "100%", my: 3 }} variant="outlined">
       <OutlinedInput
