@@ -1,4 +1,5 @@
 This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app). This project is aim to display all books list with pagination, and then you can bookmark any book you want. On the bookmark page, you can see the bookmarked book list you owned, and you can unbookmark them one by one.
+
 Live site : https://deall-books-yusfi-adilaksa.netlify.app
 
 ## Getting Started
