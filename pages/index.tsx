@@ -61,8 +61,12 @@ const Home: NextPage<Props> = ({ categories, books }) => {
   };
 
   const filterByKeyword = () => {
-    return books.filter((book: any) =>
-      book.title.toLowerCase().includes(keyword.toLowerCase())
+    return books.filter(
+      (book: any) =>
+        book.title.toLowerCase().includes(keyword.toLowerCase()) ||
+        book.authors.find((author: string) =>
+          author.toLowerCase().includes(keyword.toLowerCase())
+        )
     );
   };
 
