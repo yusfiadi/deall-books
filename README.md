@@ -26,6 +26,7 @@ Open [http://localhost:3000](http://localhost:3000) with your browser to see the
 - If the next page does not have a list of books, the API should still be accessible by returning an empty array of data
 - When I was about to fetch API from the client-side, I encountered CORS errors, so I couldn't implement the infinite scroll feature. I think it can be fixed in the API configuration
 - There are several titles of the same book but have different ids, so to identify a book, the developer cannot use an id because the book id is not unique, but uses the book title.
+- Some categories have very similar books list to others. I think the API should be updated with the correct data
 
 ### Thank you
 
