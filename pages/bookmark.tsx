@@ -38,7 +38,7 @@ const MyBooksPage: NextPage = () => {
   };
 
   const filterByKeyword = () => {
-    return books.filter(
+    return myBooks.filter(
       (book: any) =>
         book.title.toLowerCase().includes(keyword.toLowerCase()) ||
         book.authors.find((author: string) =>
